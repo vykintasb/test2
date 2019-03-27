@@ -1,0 +1,77 @@
+.btn {
+  cursor: pointer;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: none;
+  border-radius: 4px;
+  height: 30px;
+  composes: bodyText;
+  white-space: nowrap;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: 1px;
+
+  &:not(button) {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.small {
+    height: 20px;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  &.primary {
+    background-color: cyan;
+    color: black;
+
+    &:hover {
+      background-color: teal;
+    }
+
+    &:active {
+      background-color: teal;
+    }
+
+    &.disabled {
+      pointer-events: none;
+      background-color: grey;
+      border: 1px solid grey;
+    }
+  }
+
+  &.secondary {
+    background-color: transparent;
+    border-width: 1px;
+    border-style: solid;
+    border-color: teal;
+
+    &:hover {
+      background-color: grey;
+    }
+    &:active {
+      background-color: grey;
+    }
+    &.disabled {
+      pointer-events: none;
+      color: black;
+      border: 1px solid grey;
+    }
+    &.inheritColor {
+      color: inherit;
+      border-color: inherit;
+      &:hover {
+        background-color: transparent;
+      }
+      &:active {
+        background-color: transparent;
+      }
+    }
+  }
+}

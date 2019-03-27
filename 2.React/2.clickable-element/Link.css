@@ -1,0 +1,55 @@
+.link {
+  cursor: pointer;
+  border-style: none;
+  outline: none;
+  background: none;
+  composes: bodyText;
+  padding: 0;
+  text-decoration: none;
+  position: relative;
+  &.primary {
+    color: teal;
+
+    &:active {
+      text-decoration: underline;
+    }
+
+    &.inheritColor {
+      color: inherit;
+    }
+  }
+
+  &.secondary {
+    color: teal;
+
+    &:active {
+      text-decoration: underline;
+    }
+    &.inheritColor {
+      color: inherit;
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+    color: grey;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: teal;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  &:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+}
